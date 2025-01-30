@@ -147,3 +147,142 @@
 #    string1 = input("Gib den ersten String ein: ")
 #    string2 = input("Gib den zweiten String ein: ")
 
+# Listen Aufgabe 1
+#
+#def meine_liste():
+#    obst = []
+#    obst.insert(0,"Banane")
+#    obst.insert(1,"Apfel")
+#    obst.insert(2,"Orange")
+#    
+#    #print("")
+#    #print(f"Gebe das zweite element in der Liste aus ---> {obst[2]} ")
+#    
+#    umgekehrt = obst[::-1]
+#    #print(f"Die Liste mit obst in Umgekehrter reihenfolge ---> {umgekehrt}")
+#       
+#    #zusatz =["Traube", "Erdbeere"]
+#    #kombi = obst + zusatz
+#    #print(f"{kombi}")
+#
+#    #obst.append("Traube")
+#    #obst.append("Erdbeere")
+#    #print(f"nach dem einfügen von 2 weiteren die ausgabe ---> {obst}")
+#    
+#meine_liste()
+#
+
+#Aufgabe Sets 
+#
+#set1={'123456'}
+#set2={'5678910'}
+#set3= set1.union(set2)
+#set3=set1.intersection(set2)
+#set1.add('7')
+#'8' in set2 
+#set2.discard('10')
+#
+#set1.intersection_update(set2)
+#set1.symmetric_difference_update(set2)
+#set1.symmetric_difference(set2)
+#
+#set1|set2 
+#set1-set2
+#set1&set2
+#set1^set2
+
+# Lotto generator
+#import random
+#
+#def weiter():   
+#    print("Als nächstes wollen wir die Super Zahl ")
+#    print("Bereit ? ")
+#    eingabe2=input("Ja oder Nein ? : ")
+#    if eingabe2 == "j":
+#        superziehung()
+#    elif eingabe =="n":
+#        print("Vielen dank für dein Intresse !")
+#def superziehung():
+#    superzahl = random.randint(1,10)
+#    print(superzahl)
+#
+#def lotto():
+#    lottozahlen = []
+#    lottozahlen.extend(range(0,50))
+#    random.shuffle(lottozahlen)
+#    for x in range(6):
+#        print(lottozahlen[x])
+#    weiter()
+#print("Willkommen bei der Ziehung der Lotto zahlen")
+#print("Wollen wir mit der Ziehung beginnen ? ")
+#eingabe=input("Ja oder Nein ? : ")
+#if eingabe == "j":
+#    lotto()
+#elif eingabe =="n":
+#    print("Vielen dank für dein Intresse !")
+#
+
+# Spiel Schere Stein Papier
+import random
+def nochmal():
+    print("Willkommen züruck bei Schere Stein Papier")
+    gesten = ['Schere','Stein','Papier']
+    computer_geste = random.choice(gesten)
+    spieler_geste = None
+    while spieler_geste not in gesten :
+        print("Verfügbare gesten ", *gesten)
+        spieler_geste=input("Bitte wählen Sie eine Geste aus : ")
+        print(f"Sie haben {spieler_geste} gewählt, der Computer {computer_geste} : ", end="")
+        if spieler_geste == computer_geste:
+            print("Unentschieden! ")
+        elif (
+            (spieler_geste == "Schere" and computer_geste == "Papier")
+            or (spieler_geste == "Stein" and computer_geste == "Schere")
+            or (spieler_geste == "Papier" and computer_geste == "Stein")
+        ): 
+            print("Sie haben gewonnen! ")
+            print("Nochmal Spielen ? ")
+            eingabe= input("Ja oder Nein ? j/n ")
+            if eingabe == "j":
+                nochmal()
+            elif eingabe == "n":
+                print("Danke das Sie gespielt haben.")
+                break
+def spiel():
+    print("Willkommen bei Schere Stein Papier")
+    gesten = ['Schere','Stein','Papier']
+    computer_geste = random.choice(gesten)
+    spieler_geste = None
+    while spieler_geste not in gesten:
+        print("Verfügbare gesten ", *gesten)
+        spieler_geste=input("Bitte wählen Sie eine Geste aus : ")
+        print(f"Sie haben {spieler_geste} gewählt, der Computer {computer_geste} : ", end="")
+        if spieler_geste == computer_geste:
+            print("Unentschieden! ")
+            print("Nochmal Spielen ? ")
+            eingabe= input("Ja oder Nein ? j/n ")
+            if eingabe == "j":
+                nochmal()
+            elif eingabe == "n":
+                print("Danke das Sie gespielt haben.")
+                break
+        elif ((spieler_geste == "Schere" and computer_geste == "Papier")
+            or (spieler_geste == "Stein" and computer_geste == "Schere")
+            or (spieler_geste == "Papier" and computer_geste == "Stein")):
+            print("Sie haben gewonnen! ")
+            print("Nochmal Spielen ? ")
+            eingabe= input("Ja oder Nein ? j/n ")
+            if eingabe == "j":
+                nochmal()
+            elif eingabe == "n":
+                print("Danke das Sie gespielt haben.")
+                break
+            else:
+                print("Leider verloren! ")
+                print("Nochmal Spielen ? ")
+                eingabe= input("Ja oder Nein ? j/n ")
+                if eingabe == "j":
+                    spiel()
+        else: 
+            print("Danke das Sie gespielt haben.")
+spiel()
